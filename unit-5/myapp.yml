@@ -30,7 +30,11 @@ spec:
     spec:
       containers:
       - name: myservice
+<<<<<<< HEAD
         image: mazimmermann26/myservice:0.0.1
+=======
+        image: mscs621/myservice:0.0.1
+>>>>>>> upstream/master
         env: 
           - name: REDIS_ADDR
             value: "127.0.0.1"
