@@ -104,11 +104,12 @@ def index():
 
 @app.route('/functions', methods=['GET', 'POST'])
 def functions():
+    """ Provides form to make api call """
     if request.method == 'POST':
         params = request.get_json(silent=True) or request.form
 
         # use api_key as a Basic authentication (already in the form of user:pass)
-        #api_key = str(base64.b64encode(str.encode(params['api_key'])), "utf-8") # python 3.x
+        # api_key = str(base64.b64encode(str.encode(params['api_key'])), "utf-8") # python 3.x
         api_key = str(base64.b64encode(params['api_key'].encode("utf-8"))) # python 2
 
         r = requests.post(params['url'],
